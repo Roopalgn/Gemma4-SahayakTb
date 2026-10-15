@@ -1,0 +1,123 @@
+{
+  "actions": [
+    {
+      "id": "de_addiction_referral",
+      "label": "De-addiction referral and enhanced DOTS",
+      "description": "Refer patient to nearest de-addiction centre. Increase DOT frequency. Involve family member as treatment supporter.",
+      "trigger_factors": ["alcohol_use"],
+      "urgency": "high"
+    },
+    {
+      "id": "gender_sensitive_counseling",
+      "label": "Gender-sensitive counseling with family involvement",
+      "description": "Provide targeted counseling addressing male-specific dropout patterns. Involve spouse or family elder as treatment supporter.",
+      "trigger_factors": ["male_sex"],
+      "urgency": "moderate"
+    },
+    {
+      "id": "extended_dot_with_dst",
+      "label": "Extended DOT with drug susceptibility testing",
+      "description": "Ensure DST completed before or early in treatment. Extend directly observed therapy frequency. Monitor closely for resistance patterns.",
+      "trigger_factors": ["retreatment_case"],
+      "urgency": "high"
+    },
+    {
+      "id": "nikshay_transfer_mobile_followup",
+      "label": "NIKSHAY transfer-out and mobile follow-up",
+      "description": "Register transfer-out in NIKSHAY. Coordinate with receiving DOT center. Obtain multiple contact numbers. Schedule phone follow-ups.",
+      "trigger_factors": ["migration_no_fixed_address"],
+      "urgency": "high"
+    },
+    {
+      "id": "proactive_antiemetics_dose_timing",
+      "label": "Proactive antiemetic prescription and dose timing adjustment",
+      "description": "Prescribe antiemetics before nausea worsens. Adjust dose timing (after meals vs before). Reassure patient side effects are manageable and temporary.",
+      "trigger_factors": ["intensive_phase_side_effects"],
+      "urgency": "moderate"
+    },
+    {
+      "id": "integrated_tb_hiv_care",
+      "label": "Integrated TB-HIV care coordination",
+      "description": "Coordinate with ART center. Synchronize visit schedules. Monitor drug interactions. Ensure CPT (cotrimoxazole preventive therapy).",
+      "trigger_factors": ["hiv_coinfection"],
+      "urgency": "high"
+    },
+    {
+      "id": "nikshay_poshan_yojana_travel_voucher",
+      "label": "Nikshay Poshan Yojana enrollment and travel support",
+      "description": "Enroll patient in Nikshay Poshan Yojana (Rs 500/month nutritional support). Arrange travel vouchers or reimbursement. Explore community DOT closer to home.",
+      "trigger_factors": ["daily_wage_poverty", "distance_from_dot_center"],
+      "urgency": "high"
+    },
+    {
+      "id": "cessation_counseling_referral",
+      "label": "Tobacco cessation counseling and referral",
+      "description": "Provide brief tobacco cessation counseling at every visit. Refer to cessation support if available. Document smoking status at each visit.",
+      "trigger_factors": ["smoking_tobacco"],
+      "urgency": "moderate"
+    },
+    {
+      "id": "psychosocial_support_shorter_regimen",
+      "label": "Psychosocial support and shorter regimen evaluation",
+      "description": "Assess eligibility for shorter DR-TB regimen. Arrange psychosocial counseling. Connect with patient support group. Schedule more frequent check-ins.",
+      "trigger_factors": ["drtb_long_treatment"],
+      "urgency": "high"
+    },
+    {
+      "id": "community_dot_domiciliary_visits",
+      "label": "Community DOT provider or domiciliary visits",
+      "description": "Assign community DOT provider near patient's residence. Switch to domiciliary (home-based) DOT. Reduce patient travel burden.",
+      "trigger_factors": ["distance_from_dot_center"],
+      "urgency": "moderate"
+    },
+    {
+      "id": "peer_support_flexible_scheduling",
+      "label": "Peer support and flexible visit scheduling",
+      "description": "Connect with peer supporter of similar age. Adjust DOT timing to avoid work/college conflicts. Use evening or weekend slots if available.",
+      "trigger_factors": ["young_adult"],
+      "urgency": "low"
+    },
+    {
+      "id": "anticipatory_counseling_reinforcement",
+      "label": "Anticipatory counseling — treatment completion reinforcement",
+      "description": "Reinforce that feeling better does NOT mean bacteria are gone. Explain that stopping early creates drug-resistant TB. Show sputum conversion results if available. Emphasize remaining treatment duration.",
+      "trigger_factors": ["symptom_improvement"],
+      "urgency": "high"
+    },
+    {
+      "id": "integrated_tb_dm_care",
+      "label": "Integrated TB-diabetes care",
+      "description": "Coordinate with diabetes care provider. Monitor blood sugar at TB visits. Adjust diabetes medication if needed. Ensure both conditions are managed together.",
+      "trigger_factors": ["diabetes_comorbidity"],
+      "urgency": "moderate"
+    },
+    {
+      "id": "chw_engagement_social_support",
+      "label": "Community health worker engagement and social support mapping",
+      "description": "Assign ASHA/CHW for regular home visits. Map available social support (neighbors, community groups, NGOs). Ensure patient is not socially isolated.",
+      "trigger_factors": ["divorced_separated"],
+      "urgency": "moderate"
+    },
+    {
+      "id": "pictorial_cards_vernacular_counseling",
+      "label": "Pictorial medication cards and vernacular counseling",
+      "description": "Provide pictorial cards showing which medicine to take when. Use local language for all counseling. Simplify instructions. Verify understanding using teach-back method.",
+      "trigger_factors": ["low_health_literacy"],
+      "urgency": "moderate"
+    },
+    {
+      "id": "home_visit_before_next_dose",
+      "label": "Schedule home visit before next scheduled dose",
+      "description": "Do not wait for missed dose. Proactively schedule home visit. Contact ANM supervisor. Confirm patient intent to continue treatment.",
+      "trigger_factors": [],
+      "urgency": "high"
+    },
+    {
+      "id": "supervisor_escalation",
+      "label": "Escalate to TB supervisor / District TB Officer",
+      "description": "Notify STS/STLS supervisor. Request intervention from District TB Officer if patient is at critical risk. Document escalation in NIKSHAY.",
+      "trigger_factors": [],
+      "urgency": "critical"
+    }
+  ]
+}

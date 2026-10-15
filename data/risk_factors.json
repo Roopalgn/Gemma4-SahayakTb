@@ -1,0 +1,258 @@
+[
+  {
+    "rank": 1,
+    "factor": "alcohol_use",
+    "label": "Alcohol use or dependence",
+    "odds_ratio_low": 2.9,
+    "odds_ratio_high": 3.5,
+    "sources": ["Santha et al. 2002 (PMID 12234133)", "Vijay et al. 2010 (PMID 20386611)"],
+    "ntep_action": "de_addiction_referral",
+    "natural_language_variants": [
+      "patient drinks regularly",
+      "patient ne bataya ki sharab peete hain",
+      "alcohol use reported",
+      "family says he drinks daily",
+      "sharab ki aadat hai",
+      "admits to drinking on weekends",
+      "spouse reports heavy drinking"
+    ]
+  },
+  {
+    "rank": 2,
+    "factor": "male_sex",
+    "label": "Male sex",
+    "odds_ratio_low": 1.5,
+    "odds_ratio_high": 2.8,
+    "sources": ["Santha et al. 2002 (PMID 12234133)", "Balasubramanian et al. 2004"],
+    "ntep_action": "gender_sensitive_counseling",
+    "natural_language_variants": [
+      "male patient",
+      "purush mariz"
+    ]
+  },
+  {
+    "rank": 3,
+    "factor": "retreatment_case",
+    "label": "Retreatment case (Category II)",
+    "odds_ratio_low": 2.0,
+    "odds_ratio_high": 3.0,
+    "sources": ["Sarangi & Dutt 2014 (PMID 25241570)", "Azhar 2012 (PMID 22628930)"],
+    "ntep_action": "extended_dot_with_dst",
+    "natural_language_variants": [
+      "retreatment case",
+      "previously treated",
+      "Cat II patient",
+      "pehle bhi treatment hua tha",
+      "relapse case",
+      "treatment failure returning"
+    ]
+  },
+  {
+    "rank": 4,
+    "factor": "migration_no_fixed_address",
+    "label": "Migration or no fixed address",
+    "odds_ratio_low": 2.0,
+    "odds_ratio_high": 2.8,
+    "sources": ["Vijay et al. 2010 (PMID 20386611)", "Kumar et al. 2024 (PMID 39067959)"],
+    "ntep_action": "nikshay_transfer_mobile_followup",
+    "natural_language_variants": [
+      "migrant worker",
+      "no permanent address",
+      "moves between cities for work",
+      "pravasi mazdoor",
+      "shifts location frequently",
+      "staying temporarily",
+      "came from another district"
+    ]
+  },
+  {
+    "rank": 5,
+    "factor": "intensive_phase_side_effects",
+    "label": "Side effects during intensive phase",
+    "odds_ratio_low": 1.8,
+    "odds_ratio_high": 2.5,
+    "sources": ["Vijay et al. 2010 (PMID 20386611)", "Kumar et al. 2024 (PMID 39067959)"],
+    "ntep_action": "proactive_antiemetics_dose_timing",
+    "natural_language_variants": [
+      "nausea and vomiting reported",
+      "ji machlata hai dawai lene ke baad",
+      "says the medicine makes him sick",
+      "stomach still bad",
+      "pet me jalan hoti hai",
+      "joint pain from medication",
+      "skin turning yellow, itching",
+      "ulti aati hai roz"
+    ]
+  },
+  {
+    "rank": 6,
+    "factor": "hiv_coinfection",
+    "label": "HIV co-infection",
+    "odds_ratio_low": 1.8,
+    "odds_ratio_high": 2.5,
+    "sources": ["Reddy Satti et al. 2016"],
+    "ntep_action": "integrated_tb_hiv_care",
+    "natural_language_variants": [
+      "HIV positive",
+      "on ART also",
+      "TB-HIV co-infection",
+      "taking both TB and HIV medicines"
+    ]
+  },
+  {
+    "rank": 7,
+    "factor": "daily_wage_poverty",
+    "label": "Daily wage labor or poverty",
+    "odds_ratio_low": 1.7,
+    "odds_ratio_high": 2.3,
+    "sources": ["Kumar et al. 2024 (PMID 39067959)", "Shiotani 2014"],
+    "ntep_action": "nikshay_poshan_yojana_travel_voucher",
+    "natural_language_variants": [
+      "daily wage worker",
+      "mazdoori karta hai",
+      "can't afford to miss work",
+      "no income if he doesn't go to work",
+      "BPL card holder",
+      "very poor family",
+      "rojana ki kamai se ghar chalta hai",
+      "says can't come because of lost wages"
+    ]
+  },
+  {
+    "rank": 8,
+    "factor": "smoking_tobacco",
+    "label": "Smoking or tobacco use",
+    "odds_ratio_low": 1.6,
+    "odds_ratio_high": 2.2,
+    "sources": ["Azhar 2012 (PMID 22628930)", "Thapa et al. 2014"],
+    "ntep_action": "cessation_counseling_referral",
+    "natural_language_variants": [
+      "smokes bidi",
+      "bidi peeta hai",
+      "tobacco chewing",
+      "gutka user",
+      "still smoking despite advice",
+      "tambaaku khata hai"
+    ]
+  },
+  {
+    "rank": 9,
+    "factor": "drtb_long_treatment",
+    "label": "DR-TB requiring extended treatment (>6 months)",
+    "odds_ratio_low": 1.5,
+    "odds_ratio_high": 2.5,
+    "sources": ["WHO Companion Handbook for DR-TB 2014"],
+    "ntep_action": "psychosocial_support_shorter_regimen",
+    "natural_language_variants": [
+      "MDR-TB patient",
+      "on longer regimen",
+      "drug resistant case",
+      "treatment will take 9-20 months",
+      "dawai badli gayi kyunki pehle wali kaam nahi ki"
+    ]
+  },
+  {
+    "rank": 10,
+    "factor": "distance_from_dot_center",
+    "label": "Distance from DOT center",
+    "odds_ratio_low": 1.5,
+    "odds_ratio_high": 2.0,
+    "sources": ["Vijay et al. 2010 (PMID 20386611)", "Shiotani 2014"],
+    "ntep_action": "community_dot_domiciliary_visits",
+    "natural_language_variants": [
+      "lives far from center",
+      "2 hours travel each way",
+      "gaon bahut door hai",
+      "bus service unreliable",
+      "transport cost is a problem",
+      "aane me bahut paisa lagta hai",
+      "can't come daily because of distance"
+    ]
+  },
+  {
+    "rank": 11,
+    "factor": "young_adult",
+    "label": "Young adult (15-30 years)",
+    "odds_ratio_low": 1.4,
+    "odds_ratio_high": 1.9,
+    "sources": ["Vijay et al. 2010 (PMID 20386611)", "Santha et al. 2002 (PMID 12234133)"],
+    "ntep_action": "peer_support_flexible_scheduling",
+    "natural_language_variants": [
+      "22 year old",
+      "young man",
+      "college student",
+      "just started working",
+      "umar 19 saal"
+    ]
+  },
+  {
+    "rank": 12,
+    "factor": "symptom_improvement",
+    "label": "Symptom improvement at month 2-3",
+    "odds_ratio_low": 1.4,
+    "odds_ratio_high": 1.8,
+    "sources": ["WHO Treatment of TB Guidelines 4th ed."],
+    "ntep_action": "anticipatory_counseling_reinforcement",
+    "natural_language_variants": [
+      "feeling much better now",
+      "ab theek lag raha hai",
+      "says he doesn't need medicine anymore",
+      "no more cough",
+      "khansi band ho gayi",
+      "thinks treatment is complete",
+      "weight gain, feels healthy",
+      "wants to stop early"
+    ]
+  },
+  {
+    "rank": 13,
+    "factor": "diabetes_comorbidity",
+    "label": "Diabetes comorbidity",
+    "odds_ratio_low": 1.3,
+    "odds_ratio_high": 1.8,
+    "sources": ["Velayutham et al. 2014"],
+    "ntep_action": "integrated_tb_dm_care",
+    "natural_language_variants": [
+      "diabetic patient",
+      "sugar bhi hai",
+      "on metformin",
+      "blood sugar uncontrolled",
+      "diabetes ke saath TB"
+    ]
+  },
+  {
+    "rank": 14,
+    "factor": "divorced_separated",
+    "label": "Divorced or separated marital status",
+    "odds_ratio_low": 1.4,
+    "odds_ratio_high": 1.7,
+    "sources": ["Zhou et al. 2020 (PMID 32618243)"],
+    "ntep_action": "chw_engagement_social_support",
+    "natural_language_variants": [
+      "divorced",
+      "separated from spouse",
+      "talaq ho gaya",
+      "lives alone",
+      "no family support",
+      "akela rehta hai"
+    ]
+  },
+  {
+    "rank": 15,
+    "factor": "low_health_literacy",
+    "label": "Low health literacy",
+    "odds_ratio_low": 1.3,
+    "odds_ratio_high": 1.6,
+    "sources": ["Chauhan et al. 2024 (PMID 38812804)"],
+    "ntep_action": "pictorial_cards_vernacular_counseling",
+    "natural_language_variants": [
+      "doesn't understand the treatment",
+      "samajh nahi aata",
+      "illiterate",
+      "padha likha nahi hai",
+      "couldn't read the instructions",
+      "confused about which medicine to take",
+      "asked same questions again"
+    ]
+  }
+]

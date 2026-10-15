@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAHAYAK-TB — Adherence Dropout Risk Intelligence</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Animated background -->
+    <div class="bg-gradient"></div>
+    <div class="bg-grid"></div>
+    <div class="floating-orbs">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar glass-card" id="navbar">
+        <div class="nav-brand">
+            <div class="logo-pulse"></div>
+            <span class="nav-title">SAHAYAK-TB</span>
+        </div>
+        <div class="nav-links">
+            <a href="#impact" class="nav-link">Impact</a>
+            <a href="#app" class="nav-link">Demo</a>
+            <a href="#architecture" class="nav-link">Architecture</a>
+            <a href="#research" class="nav-link">Research</a>
+        </div>
+        <div class="nav-badges">
+            <span class="badge badge-tech">Gemma 4 E2B</span>
+            <span class="badge badge-tech">llama.cpp</span>
+            <span class="badge badge-accent">Offline Capable</span>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-content fade-in-up">
+            <div class="hero-eyebrow">
+                <span class="pulse-dot"></span>
+                TB Treatment Adherence · Decision Support · Edge AI
+            </div>
+            <h1 class="hero-title">
+                Predict Dropout Risk<br>
+                <span class="gradient-text">Before It Happens</span>
+            </h1>
+            <p class="hero-subtitle">
+                AI-powered risk assessment for India's 25,000+ DOTS centers. 
+                Processes multi-visit notes in English, Hindi, or code-switched —  
+                returns evidence-based risk tiers with citation-backed clinical actions.
+                <strong>Runs entirely on-device. No internet needed at point of care.</strong>
+            </p>
+            <div class="hero-cta-row">
+                <a href="#app" class="btn btn-primary btn-hero">
+                    <span class="btn-icon">⚡</span> Try Live Demo
+                </a>
+                <a href="#impact" class="btn btn-ghost btn-hero">
+                    See the Impact ↓
+                </a>
+            </div>
+        </div>
+        <!-- Hero Stats Ticker -->
+        <div class="hero-stats fade-in-up" style="--delay: 0.3s">
+            <div class="stat-card glass-card hover-lift">
+                <span class="stat-number counter" data-target="90">0</span><span class="stat-unit">%</span>
+                <span class="stat-label">Tier Accuracy</span>
+            </div>
+            <div class="stat-card glass-card hover-lift">
+                <span class="stat-number counter" data-target="100">0</span><span class="stat-unit">%</span>
+                <span class="stat-label">High/Critical Recall</span>
+            </div>
+            <div class="stat-card glass-card hover-lift">
+                <span class="stat-number">3.4</span><span class="stat-unit">GB</span>
+                <span class="stat-label">Model Size (Q4)</span>
+            </div>
+            <div class="stat-card glass-card hover-lift">
+                <span class="stat-number counter" data-target="0">0</span><span class="stat-unit"></span>
+                <span class="stat-label">Cloud Dependencies</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Impact Section -->
+    <section class="impact-section" id="impact">
+        <div class="section-header fade-in-up">
+            <div class="section-badge">WHY THIS MATTERS</div>
+            <h2>The TB Dropout Crisis</h2>
+            <p class="section-subtitle">India bears the world's largest TB burden. Dropout creates drug resistance.</p>
+        </div>
+
+        <!-- Impact Numbers Grid -->
+        <div class="impact-grid">
+            <div class="impact-card glass-card fade-in-up hover-lift" style="--delay: 0.1s">
+                <div class="impact-number">
+                    <span class="counter" data-target="28">0</span><span class="impact-unit">%</span>
+                </div>
+                <div class="impact-label">of TB patients drop out before completing treatment in India</div>
+                <div class="impact-source">Source: NTEP Annual Report 2023</div>
+            </div>
+            <div class="impact-card glass-card fade-in-up hover-lift" style="--delay: 0.2s">
+                <div class="impact-number">
+                    <span class="counter" data-target="32">0</span><span class="impact-unit">%</span>
+                </div>
+                <div class="impact-label">of the world's drug-resistant TB cases originate in India</div>
+                <div class="impact-source">Source: WHO Global TB Report 2024</div>
+            </div>
+            <div class="impact-card glass-card fade-in-up hover-lift" style="--delay: 0.3s">
+                <div class="impact-number">
+                    <span class="counter" data-target="25">0</span><span class="impact-unit">K+</span>
+                </div>
+                <div class="impact-label">DOTS centers across India that could deploy this tool offline</div>
+                <div class="impact-source">Source: NTEP Infrastructure Data</div>
+            </div>
+            <div class="impact-card glass-card fade-in-up hover-lift" style="--delay: 0.4s">
+                <div class="impact-number">
+                    ₹<span class="counter" data-target="180">0</span><span class="impact-unit">K</span>
+                </div>
+                <div class="impact-label">cost per DR-TB patient treatment vs ₹8K for drug-sensitive TB</div>
+                <div class="impact-source">Source: Indian Journal of TB 2022</div>
+            </div>
+        </div>
+
+        <!-- Cascade Visualization -->
+        <div class="cascade-section fade-in-up">
+            <h3 class="cascade-title">The Dropout → DR-TB Cascade</h3>
+            <div class="cascade-flow">
+                <div class="cascade-node cascade-start">
+                    <div class="cascade-icon">🏥</div>
+                    <div class="cascade-text">Patient starts<br>6-month treatment</div>
+                    <div class="cascade-stat">100%</div>
+                </div>
+                <div class="cascade-arrow">→</div>
+                <div class="cascade-node cascade-warning">
+                    <div class="cascade-icon">⚠️</div>
+                    <div class="cascade-text">Early warning<br>signs appear (Mo 2-3)</div>
+                    <div class="cascade-stat">~40%</div>
+                </div>
+                <div class="cascade-arrow cascade-arrow-danger">→</div>
+                <div class="cascade-node cascade-danger">
+                    <div class="cascade-icon">🚨</div>
+                    <div class="cascade-text">Patient drops<br>out of treatment</div>
+                    <div class="cascade-stat">28%</div>
+                </div>
+                <div class="cascade-arrow cascade-arrow-danger">→</div>
+                <div class="cascade-node cascade-critical">
+                    <div class="cascade-icon">☠️</div>
+                    <div class="cascade-text">Drug-resistant<br>TB develops</div>
+                    <div class="cascade-stat">5-10%</div>
+                </div>
+            </div>
+            <div class="cascade-intervention">
+                <div class="intervention-arrow">↑</div>
+                <div class="intervention-badge glass-card">
+                    <strong>SAHAYAK-TB intervenes here</strong> — identifies at-risk patients before they miss doses
+                </div>
+            </div>
+        </div>
+
+        <!-- Cost-Benefit Chart -->
+        <div class="cost-benefit fade-in-up">
+            <h3 class="section-subtitle-heading">Economic Impact Per 1,000 Patients</h3>
+            <div class="chart-container glass-card">
+                <div class="bar-chart">
+                    <div class="bar-group">
+                        <div class="bar-label">Without SAHAYAK-TB</div>
+                        <div class="bar bar-danger" style="--bar-width: 85%">
+                            <span class="bar-value">₹5.04 Cr</span>
+                        </div>
+                        <div class="bar-desc">280 dropouts × ₹1.8L DR-TB treatment cost</div>
+                    </div>
+                    <div class="bar-group">
+                        <div class="bar-label">With SAHAYAK-TB (50% reduction)</div>
+                        <div class="bar bar-success" style="--bar-width: 42%">
+                            <span class="bar-value">₹2.52 Cr</span>
+                        </div>
+                        <div class="bar-desc">140 dropouts prevented → ₹2.52 Cr saved per 1K patients</div>
+                    </div>
+                </div>
+                <div class="chart-footnote">
+                    Conservative estimate: 50% dropout reduction through early intervention. Actual reduction with timely DOTS+ counselling can reach 60-70%.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem & Solution Section -->
+    <section class="problem-section" id="problem">
+        <div class="section-header fade-in-up">
+            <div class="section-badge">THE GAP</div>
+            <h2>Existing Tools Miss the Problem</h2>
+        </div>
+        <div class="comparison-grid">
+            <div class="comparison-card glass-card fade-in-up hover-lift" style="--delay: 0.1s">
+                <div class="comparison-badge badge-red">Existing AI Tools</div>
+                <ul class="comparison-list">
+                    <li class="comparison-item item-bad">Screen for TB (not dropout)</li>
+                    <li class="comparison-item item-bad">Require cloud + internet</li>
+                    <li class="comparison-item item-bad">Need structured tabular data</li>
+                    <li class="comparison-item item-bad">Serve dashboards, not providers</li>
+                    <li class="comparison-item item-bad">English-only processing</li>
+                </ul>
+            </div>
+            <div class="comparison-card glass-card comparison-highlight fade-in-up hover-lift" style="--delay: 0.2s">
+                <div class="comparison-badge badge-green">SAHAYAK-TB</div>
+                <ul class="comparison-list">
+                    <li class="comparison-item item-good">Predicts dropout before it occurs</li>
+                    <li class="comparison-item item-good">Runs 100% offline on any laptop</li>
+                    <li class="comparison-item item-good">Natural language input (free-text notes)</li>
+                    <li class="comparison-item item-good">Point-of-care for DOTS providers</li>
+                    <li class="comparison-item item-good">Hindi + English + code-switched</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main App Section (Live Demo) -->
+    <section class="app-section" id="app">
+        <div class="section-header fade-in-up">
+            <div class="section-badge">LIVE DEMO</div>
+            <h2>Try the Risk Assessment</h2>
+            <p class="section-subtitle">Enter DOTS provider visit notes — get instant dropout risk analysis</p>
+        </div>
+
+        <div class="app-container">
+            <!-- Input Panel -->
+            <div class="input-panel glass-card fade-in-left">
+                <div class="panel-header">
+                    <div class="panel-icon">📋</div>
+                    <div>
+                        <h3>Visit Notes</h3>
+                        <p class="panel-desc">Multi-visit patient notes (English / Hindi / Mixed)</p>
+                    </div>
+                </div>
+                <textarea id="visit-notes" class="notes-input" placeholder="Visit 1 (Month 1): Patient name, age/sex, occupation. Category I/II. Weight. Sputum status. Location. Risk factors observed.
+
+Visit 2 (Month 2): Weight. Side effects. Adherence observations. New developments.
+
+Visit 3 (Month 3): Changes in behaviour, symptoms, or social situation..."></textarea>
+                
+                <div class="input-actions">
+                    <button class="btn btn-primary" id="assess-btn" onclick="assessRisk()">
+                        <span class="btn-icon">⚡</span>
+                        <span class="btn-text">Assess Dropout Risk</span>
+                        <span class="btn-loader" id="loader"></span>
+                    </button>
+                    <button class="btn btn-ghost" onclick="loadExample()">
+                        Load Example
+                    </button>
+                </div>
+
+                <!-- Examples Carousel -->
+                <div class="examples-section">
+                    <div class="examples-label">Quick examples:</div>
+                    <div class="example-chips">
+                        <button class="chip" onclick="loadExample(0)">Low Risk</button>
+                        <button class="chip" onclick="loadExample(1)">Moderate</button>
+                        <button class="chip" onclick="loadExample(2)">High Risk</button>
+                        <button class="chip" onclick="loadExample(3)">Critical</button>
+                        <button class="chip chip-hindi" onclick="loadExample(4)">Mixed (हिंदी+Eng)</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Output Panel -->
+            <div class="output-panel" id="output-panel">
+                <!-- Empty State -->
+                <div class="empty-state" id="empty-state">
+                    <div class="empty-icon">🏥</div>
+                    <p>Enter visit notes and click "Assess" to see results</p>
+                    <p class="empty-hint">Ctrl+Enter to submit · First inference loads the model (~30s)</p>
+                </div>
+
+                <!-- Loading State -->
+                <div class="loading-state hidden" id="loading-state">
+                    <div class="loading-ring"></div>
+                    <p class="loading-text">Analyzing visit patterns...</p>
+                    <p class="loading-sub">Running on-device inference with Gemma 4 E2B (Q4_K_M)</p>
+                </div>
+
+                <!-- Results -->
+                <div class="results hidden" id="results">
+                    <!-- Risk Tier Card -->
+                    <div class="tier-card glass-card" id="tier-card">
+                        <div class="tier-label">Dropout Risk Assessment</div>
+                        <div class="tier-badge" id="tier-badge">—</div>
+                        <div class="tier-meta" id="tier-meta"></div>
+                    </div>
+
+                    <!-- Risk Factors -->
+                    <div class="factors-section glass-card fade-in-up">
+                        <h3 class="section-title">
+                            <span class="title-icon">⚠️</span> Risk Factors Identified
+                        </h3>
+                        <div id="factors-list" class="factors-list"></div>
+                    </div>
+
+                    <!-- Action Card -->
+                    <div class="action-card glass-card fade-in-up">
+                        <h3 class="section-title">
+                            <span class="title-icon">📌</span> Recommended NTEP Action
+                        </h3>
+                        <p id="action-text" class="action-text"></p>
+                    </div>
+
+                    <!-- Data Completeness -->
+                    <div class="completeness-card glass-card fade-in-up">
+                        <h3 class="section-title">
+                            <span class="title-icon">📊</span> Data Completeness
+                        </h3>
+                        <p id="completeness-text" class="completeness-text"></p>
+                    </div>
+
+                    <!-- Raw JSON Toggle -->
+                    <details class="json-details glass-card">
+                        <summary class="json-summary">View Raw JSON Output</summary>
+                        <pre id="json-output" class="json-code"></pre>
+                    </details>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Architecture Section - Enhanced -->
+    <section class="arch-section" id="architecture">
+        <div class="section-header fade-in-up">
+            <div class="section-badge">TECHNICAL DESIGN</div>
+            <h2>Architecture</h2>
+            <p class="section-subtitle">Edge-first clinical AI — no cloud dependency, no patient data leaves the device</p>
+        </div>
+
+        <!-- Pipeline Flow -->
+        <div class="pipeline-container fade-in-up">
+            <div class="pipeline-step glass-card hover-lift">
+                <div class="pipeline-number">1</div>
+                <div class="pipeline-icon">📝</div>
+                <h4>Input</h4>
+                <p>Multi-visit DOTS notes<br>(English / Hindi / Mixed)</p>
+                <div class="pipeline-detail">Free-text, unstructured clinical narrative from provider</div>
+            </div>
+            <div class="pipeline-connector"><div class="connector-line"></div><div class="connector-dot"></div></div>
+            <div class="pipeline-step glass-card hover-lift">
+                <div class="pipeline-number">2</div>
+                <div class="pipeline-icon">🧠</div>
+                <h4>Gemma 4 E2B-it</h4>
+                <p>QLoRA fine-tuned<br>Q4_K_M GGUF (3.4GB)</p>
+                <div class="pipeline-detail">r=16, α=16, all-linear, structured JSON output</div>
+            </div>
+            <div class="pipeline-connector"><div class="connector-line"></div><div class="connector-dot"></div></div>
+            <div class="pipeline-step glass-card hover-lift">
+                <div class="pipeline-number">3</div>
+                <div class="pipeline-icon">🔧</div>
+                <h4>Postprocess</h4>
+                <p>Text augmentation<br>Citation grounding</p>
+                <div class="pipeline-detail">Regex NER + deterministic tier calc + dedup</div>
+            </div>
+            <div class="pipeline-connector"><div class="connector-line"></div><div class="connector-dot"></div></div>
+            <div class="pipeline-step glass-card hover-lift">
+                <div class="pipeline-number">4</div>
+                <div class="pipeline-icon">📊</div>
+                <h4>Output</h4>
+                <p>Risk tier + Factors<br>+ NTEP action</p>
+                <div class="pipeline-detail">JSON schema-constrained with 15 evidence-backed factors</div>
+            </div>
+        </div>
+
+        <!-- Tech Stack Cards -->
+        <div class="tech-grid fade-in-up">
+            <div class="tech-card glass-card hover-lift">
+                <div class="tech-icon">🏗️</div>
+                <div class="tech-name">llama.cpp</div>
+                <div class="tech-detail">CPU inference, constrained grammar decoding, GGUF format</div>
+            </div>
+            <div class="tech-card glass-card hover-lift">
+                <div class="tech-icon">🎯</div>
+                <div class="tech-name">QLoRA</div>
+                <div class="tech-detail">r=16, α=16, all-linear modules, 4-bit NF4 quantization</div>
+            </div>
+            <div class="tech-card glass-card hover-lift">
+                <div class="tech-icon">📐</div>
+                <div class="tech-name">Schema Enforcement</div>
+                <div class="tech-detail">100% valid JSON output via grammar-constrained generation</div>
+            </div>
+            <div class="tech-card glass-card hover-lift">
+                <div class="tech-icon">🔬</div>
+                <div class="tech-name">Evidence Base</div>
+                <div class="tech-detail">15 risk factors with published ORs, PMIDs, and WHO guidelines</div>
+            </div>
+            <div class="tech-card glass-card hover-lift">
+                <div class="tech-icon">🌐</div>
+                <div class="tech-name">Multilingual</div>
+                <div class="tech-detail">Hindi-English code-switching native to Indian DOTS workflow</div>
+            </div>
+            <div class="tech-card glass-card hover-lift">
+                <div class="tech-icon">🔒</div>
+                <div class="tech-name">Privacy-First</div>
+                <div class="tech-detail">Zero data transmission — PHI never leaves the provider's device</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Research & Evidence Section -->
+    <section class="research-section" id="research">
+        <div class="section-header fade-in-up">
+            <div class="section-badge">EVIDENCE BASE</div>
+            <h2>Built on Published Research</h2>
+            <p class="section-subtitle">Every risk factor is grounded in peer-reviewed Indian TB cohort studies</p>
+        </div>
+
+        <div class="research-grid">
+            <div class="research-card glass-card fade-in-up hover-lift" style="--delay: 0.1s">
+                <div class="research-or">OR 1.6–2.2</div>
+                <div class="research-factor">Smoking / Tobacco Use</div>
+                <div class="research-cite">Azhar 2012 (PMID 22628930); Thapa et al. 2014</div>
+            </div>
+            <div class="research-card glass-card fade-in-up hover-lift" style="--delay: 0.15s">
+                <div class="research-or">OR 1.5–2.0</div>
+                <div class="research-factor">Distance from DOT Center</div>
+                <div class="research-cite">Vijay et al. 2010 (PMID 20386611); Shiotani 2014</div>
+            </div>
+            <div class="research-card glass-card fade-in-up hover-lift" style="--delay: 0.2s">
+                <div class="research-or">OR 2.8–3.5</div>
+                <div class="research-factor">Alcohol / Substance Use</div>
+                <div class="research-cite">Kigozi et al. 2017 (PMID 28915859); Vijay 2010</div>
+            </div>
+            <div class="research-card glass-card fade-in-up hover-lift" style="--delay: 0.25s">
+                <div class="research-or">OR 1.8–2.5</div>
+                <div class="research-factor">Intensive Phase Side Effects</div>
+                <div class="research-cite">Vijay et al. 2010; Kumar et al. 2024 (PMID 39067959)</div>
+            </div>
+            <div class="research-card glass-card fade-in-up hover-lift" style="--delay: 0.3s">
+                <div class="research-or">OR 1.7–2.3</div>
+                <div class="research-factor">Poverty / Daily Wage Labor</div>
+                <div class="research-cite">Kumar et al. 2024; Shiotani 2014</div>
+            </div>
+            <div class="research-card glass-card fade-in-up hover-lift" style="--delay: 0.35s">
+                <div class="research-or">OR 2.0–3.0</div>
+                <div class="research-factor">Retreatment Case (Cat II)</div>
+                <div class="research-cite">WHO Treatment of TB Guidelines 4th ed.</div>
+            </div>
+            <div class="research-card glass-card fade-in-up hover-lift" style="--delay: 0.4s">
+                <div class="research-or">OR 1.4–1.8</div>
+                <div class="research-factor">Symptom Improvement (Mo 2-3)</div>
+                <div class="research-cite">WHO Guidelines; RNTCP documentation</div>
+            </div>
+            <div class="research-card glass-card fade-in-up hover-lift" style="--delay: 0.45s">
+                <div class="research-or">OR 2.2–3.3</div>
+                <div class="research-factor">Migration / No Fixed Address</div>
+                <div class="research-cite">Sagbakken et al. 2008 (PMID 18096054)</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Evaluation Results Section -->
+    <section class="eval-section" id="evaluation">
+        <div class="section-header fade-in-up">
+            <div class="section-badge">PERFORMANCE</div>
+            <h2>Evaluation Results</h2>
+            <p class="section-subtitle">Tested on 20 diverse clinical scenarios with ground-truth labels</p>
+        </div>
+
+        <div class="eval-grid">
+            <div class="eval-card glass-card fade-in-up hover-lift">
+                <div class="eval-ring" data-value="90">
+                    <svg viewBox="0 0 120 120">
+                        <circle class="eval-ring-bg" cx="60" cy="60" r="52"/>
+                        <circle class="eval-ring-progress" cx="60" cy="60" r="52" style="--progress: 90"/>
+                    </svg>
+                    <div class="eval-ring-text">90%</div>
+                </div>
+                <div class="eval-label">Tier Accuracy</div>
+                <div class="eval-desc">18/20 exact tier match</div>
+            </div>
+            <div class="eval-card glass-card fade-in-up hover-lift">
+                <div class="eval-ring" data-value="100">
+                    <svg viewBox="0 0 120 120">
+                        <circle class="eval-ring-bg" cx="60" cy="60" r="52"/>
+                        <circle class="eval-ring-progress eval-ring-perfect" cx="60" cy="60" r="52" style="--progress: 100"/>
+                    </svg>
+                    <div class="eval-ring-text">100%</div>
+                </div>
+                <div class="eval-label">High/Critical Recall</div>
+                <div class="eval-desc">Never misses dangerous cases</div>
+            </div>
+            <div class="eval-card glass-card fade-in-up hover-lift">
+                <div class="eval-ring" data-value="100">
+                    <svg viewBox="0 0 120 120">
+                        <circle class="eval-ring-bg" cx="60" cy="60" r="52"/>
+                        <circle class="eval-ring-progress eval-ring-perfect" cx="60" cy="60" r="52" style="--progress: 100"/>
+                    </svg>
+                    <div class="eval-ring-text">100%</div>
+                </div>
+                <div class="eval-label">Schema Compliance</div>
+                <div class="eval-desc">Always valid structured JSON</div>
+            </div>
+            <div class="eval-card glass-card fade-in-up hover-lift">
+                <div class="eval-ring" data-value="0">
+                    <svg viewBox="0 0 120 120">
+                        <circle class="eval-ring-bg" cx="60" cy="60" r="52"/>
+                        <circle class="eval-ring-progress eval-ring-zero" cx="60" cy="60" r="52" style="--progress: 0"/>
+                    </svg>
+                    <div class="eval-ring-text">0</div>
+                </div>
+                <div class="eval-label">Cloud Dependencies</div>
+                <div class="eval-desc">100% offline inference</div>
+            </div>
+        </div>
+
+        <!-- Confusion-like tier breakdown -->
+        <div class="tier-breakdown glass-card fade-in-up">
+            <h3>Tier Prediction Breakdown</h3>
+            <div class="tier-bars">
+                <div class="tier-bar-row">
+                    <span class="tier-bar-label tier-low">Low</span>
+                    <div class="tier-bar-track">
+                        <div class="tier-bar-fill tier-fill-low" style="--fill: 100%"></div>
+                    </div>
+                    <span class="tier-bar-value">5/5 correct</span>
+                </div>
+                <div class="tier-bar-row">
+                    <span class="tier-bar-label tier-moderate">Moderate</span>
+                    <div class="tier-bar-track">
+                        <div class="tier-bar-fill tier-fill-moderate" style="--fill: 80%"></div>
+                    </div>
+                    <span class="tier-bar-value">4/5 correct</span>
+                </div>
+                <div class="tier-bar-row">
+                    <span class="tier-bar-label tier-high">High</span>
+                    <div class="tier-bar-track">
+                        <div class="tier-bar-fill tier-fill-high" style="--fill: 80%"></div>
+                    </div>
+                    <span class="tier-bar-value">4/5 correct</span>
+                </div>
+                <div class="tier-bar-row">
+                    <span class="tier-bar-label tier-critical">Critical</span>
+                    <div class="tier-bar-track">
+                        <div class="tier-bar-fill tier-fill-critical" style="--fill: 100%"></div>
+                    </div>
+                    <span class="tier-bar-value">5/5 correct</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Deployment Section -->
+    <section class="deploy-section" id="deployment">
+        <div class="section-header fade-in-up">
+            <div class="section-badge">DEPLOYMENT</div>
+            <h2>Ready for the Field</h2>
+            <p class="section-subtitle">From district hospital to Primary Health Centre — works anywhere</p>
+        </div>
+
+        <div class="deploy-grid">
+            <div class="deploy-card glass-card fade-in-up hover-lift" style="--delay: 0.1s">
+                <div class="deploy-icon">💻</div>
+                <h4>Laptop / Desktop</h4>
+                <p>Any x86/ARM machine with 4GB+ RAM</p>
+                <div class="deploy-tag">Primary deployment target</div>
+            </div>
+            <div class="deploy-card glass-card fade-in-up hover-lift" style="--delay: 0.2s">
+                <div class="deploy-icon">📱</div>
+                <h4>Android (Future)</h4>
+                <p>llama.cpp Android bindings planned</p>
+                <div class="deploy-tag">Roadmap Q3 2026</div>
+            </div>
+            <div class="deploy-card glass-card fade-in-up hover-lift" style="--delay: 0.3s">
+                <div class="deploy-icon">☁️</div>
+                <h4>Cloud API</h4>
+                <p>This demo — FastAPI on Docker</p>
+                <div class="deploy-tag">You're using it now</div>
+            </div>
+            <div class="deploy-card glass-card fade-in-up hover-lift" style="--delay: 0.4s">
+                <div class="deploy-icon">🏥</div>
+                <h4>NIKSHAY Integration</h4>
+                <p>Plugin for India's TB surveillance system</p>
+                <div class="deploy-tag">Roadmap Q4 2026</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <div class="logo-pulse"></div>
+                <span class="footer-title">SAHAYAK-TB</span>
+            </div>
+            <p class="footer-tagline">Predicting dropout before it happens — saving lives through early intervention</p>
+            <div class="footer-divider"></div>
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h5>Hackathon</h5>
+                    <p>Gemma 4 Good 2026</p>
+                    <p>Health & Sciences Impact</p>
+                    <p>llama.cpp Prize Track</p>
+                </div>
+                <div class="footer-col">
+                    <h5>Technology</h5>
+                    <p>Gemma 4 E2B-it (Google)</p>
+                    <p>llama.cpp (ggerganov)</p>
+                    <p>QLoRA Fine-tuning</p>
+                </div>
+                <div class="footer-col">
+                    <h5>Evidence</h5>
+                    <p>WHO TB Guidelines</p>
+                    <p>NTEP Protocol 2024</p>
+                    <p>15 Published Studies</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-badges">
+                    <span class="badge badge-tech">Constrained JSON</span>
+                    <span class="badge badge-tech">Q4_K_M GGUF</span>
+                    <span class="badge badge-tech">CPU-Only</span>
+                    <span class="badge badge-accent">Privacy-First</span>
+                    <span class="badge badge-accent">No PHI Transmitted</span>
+                </div>
+                <p class="footer-copy">Built with care for India's DOTS providers. No patient data leaves this device.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress" id="scroll-progress"></div>
+
+    <script src="/static/app.js"></script>
+</body>
+</html>

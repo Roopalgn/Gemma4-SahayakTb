@@ -1,0 +1,37 @@
+[
+  {
+    "id": "ood_1",
+    "description": "Elderly woman with transport dependency — written in fragmented style unlike training data",
+    "input": "Fatima Begum 68F. Husband died last year. Son working in Dubai. Daughter-in-law brings her but says it is difficult. Third month running. TB of spine, Cat I. Wt 38kg both times. Last week she came alone by auto, spent 400 rupees. Says dawai se chakkar aata hai. Missed twice this month already. Next visit she may not come — daughter-in-law going to her maika for delivery.",
+    "expected_tier": "critical",
+    "notes": "Single paragraph format (not multi-visit structure). Transport dependency + social isolation + side effects + already missing doses + imminent loss of caregiver."
+  },
+  {
+    "id": "ood_2",
+    "description": "Young professional hiding TB from employer — unusual socioeconomic profile",
+    "input": "Visit 1: Arjun Mehta, 29M, software engineer at MNC. Cat I pulmonary. Smear positive. BMI 22. Asked if company will find out. Worried about job. Taking leave as 'viral fever.' No substance use. Family supportive but lives alone in Bangalore, family in Lucknow.\n\nVisit 2: Came on time. Wt stable. Says HR is asking for medical certificate. Doesn't want TB on record. Considering going to private doctor instead. No side effects. Compliance fine so far.\n\nVisit 3: Switched to evening slot to avoid office suspicion. Missed one dose when had client dinner. Says 'main manage kar lunga' but clearly stressed. Still hasn't told employer.",
+    "expected_tier": "moderate",
+    "notes": "Unusual profile — educated, employed, no classic risk factors. Risk is stigma-driven non-disclosure leading to eventual dropout when concealment becomes untenable."
+  },
+  {
+    "id": "ood_3",
+    "description": "DR-TB patient on long regimen with injection fatigue — written in heavily Hindi-dominant",
+    "input": "Pankaj Sahu 33M, MDR-TB, injection phase chal rahi hai 4th month. Roz aana padta hai injection ke liye. Bahut dard hota hai injection mein. Kaam pe jaane mein dikkat — daily wages hain. Biwi boli ki ab band karo, paisa nahi hai. Bacche bhookhe hain. Pichle hafte 3 din nahi aaya. Bola ki injection ki jagah goli do. Sharab peeta tha pehle, ab band hai. Vajan gir raha hai — 54 se 50 ho gaya 2 mahine mein.",
+    "expected_tier": "critical",
+    "notes": "Almost entirely Hindi. DR-TB (longer regimen), injection fatigue, family pressure to stop, financial crisis, weight loss, already missing days. Very different linguistic register from training data."
+  },
+  {
+    "id": "ood_4",
+    "description": "Adolescent with treatment fatigue — minimal clinical detail available",
+    "input": "Neha, 16F, student. 5th month. Cat I. Father brings her. Today father said next month board exams and she cannot miss school for DOT visits. Patient quiet, doesn't speak much. Father asking about shorter course. Weight OK. No complaints documented. Sputum converted month 2.",
+    "expected_tier": "moderate",
+    "notes": "Very sparse notes. Risk is month 5 treatment fatigue + exam pressure + father seeking to stop early. Minimal data — model must assess with limited information and report data completeness gap."
+  },
+  {
+    "id": "ood_5",
+    "description": "Migrant worker with address change — systemic follow-up risk",
+    "input": "Visit 1 (Month 1): Mohammad Riyaz 28M. Construction labor from Jharkhand. Cat I. Site near Whitefield. Shares room with 5 others. Thekedar laaya tha check-up ke liye. Smear positive. Wt 58.\n\nVisit 2 (Month 2): Came alone. Said thekedar paying for auto. Wt 57. Cough reducing. Takes medicine regularly. No drinking.\n\nVisit 3 (Month 3): Different auto driver dropped him. Says construction site finishing next month — will shift to new site, doesn't know where. Thekedar may not continue support. Asked if DOT transfer possible. Still compliant today but worried about future.",
+    "expected_tier": "high",
+    "notes": "Compliant now but impending systemic disruption — address change, loss of employer support, no independent transport. Model must project future risk from current compliance + impending instability."
+  }
+]

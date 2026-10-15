@@ -1,0 +1,27 @@
+__pycache__/
+*.pyc
+*.gguf
+outputs/
+.env
+
+# Internal planning/reference (not for judges)
+output.txt
+info.md
+prev_winner.md
+constraints.md
+problem_statement.md
+problem_statement_v2.md
+
+# Debug/intermediate eval logs (binary-encoded)
+results/eval_final.txt
+results/eval_augmented.txt
+results/eval_latest.txt
+
+# Debug/utility scripts (not core pipeline)
+training/debug_*.py
+training/base_model_comparison.py
+training/show_inputs.py
+training/simulate_augment.py
+training/test_deterministic.py
+training/trace10.py
+training/trace_pipeline.py

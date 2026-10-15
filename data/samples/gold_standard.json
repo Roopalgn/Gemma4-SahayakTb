@@ -1,0 +1,354 @@
+[
+  {
+    "id": "gold_001",
+    "risk_tier": "high",
+    "num_visits": 3,
+    "language": "mixed",
+    "input": "Visit 1 (Month 1): Ramesh Kumar, 35M, daily wage construction worker. Category I new case. Started DOTS today. Weight 52kg. Sputum positive. Lives in labour colony, about 1.5 hours from DOT center by bus. Explained full 6-month course. Patient seemed to understand but was worried about missing work. Bidi peeta hai, advised to quit.\n\nVisit 2 (Month 2): Came for dose collection. Weight 51kg. Complained of nausea — ji machlata hai dawai lene ke baad. Said he missed 2 days last week because of work at a construction site in another area. Reiterated importance of completing course. Side effects seem manageable but he looked frustrated.\n\nVisit 3 (Month 3): Patient says ab theek lag raha hai, khansi band ho gayi. Wants to know if he can stop treatment early. Weight 53kg — good sign. But still smoking bidi. Said bus fare is getting expensive — aane me bahut paisa lagta hai. No sputum test done this visit.",
+    "output": {
+      "patient_id": "RK_35M_001",
+      "visit_number": 3,
+      "treatment_month": 3,
+      "dropout_risk_tier": "high",
+      "risk_factors": [
+        {
+          "factor": "symptom resolution without treatment completion",
+          "visit_first_noted": 3,
+          "clinical_basis": "patients reporting feeling well in month 2-3 show 1.4-1.8x higher dropout odds (WHO Treatment of TB Guidelines 4th ed.)",
+          "dots_implication": "reinforce that bacteria are still present despite symptom improvement; show sputum results"
+        },
+        {
+          "factor": "transport cost burden and distance from DOT center",
+          "visit_first_noted": 1,
+          "clinical_basis": "distance from DOT center is a consistent top-3 dropout predictor with OR 1.5-2.0 (Vijay et al. 2010); economic barriers compound with daily wage loss",
+          "dots_implication": "check eligibility for Nikshay Poshan Yojana and NTEP travel reimbursement; explore community DOT closer to residence"
+        },
+        {
+          "factor": "daily wage labor — income loss from clinic visits",
+          "visit_first_noted": 1,
+          "clinical_basis": "daily wage labor associated with 1.7-2.3x higher dropout odds (Kumar et al. 2024)",
+          "dots_implication": "schedule DOT at times that minimize work disruption; confirm Nikshay Poshan enrollment"
+        },
+        {
+          "factor": "continued smoking despite counseling",
+          "visit_first_noted": 1,
+          "clinical_basis": "smoking/tobacco use associated with 1.6-2.2x higher dropout odds (Azhar 2012)",
+          "dots_implication": "repeat cessation counseling; link continued smoking to treatment outcome"
+        }
+      ],
+      "recommended_action": "Schedule home visit before next scheduled dose. Contact ANM supervisor. Enroll in Nikshay Poshan Yojana if not already enrolled. Explore community DOT provider near labour colony. Do not wait for missed dose.",
+      "data_completeness": "partial — sputum conversion status at month 2-3 not confirmed; no sputum test at visit 3",
+      "confidence": "high"
+    }
+  },
+  {
+    "id": "gold_002",
+    "risk_tier": "low",
+    "num_visits": 3,
+    "language": "english",
+    "input": "Visit 1 (Month 1): Priya Sharma, 28F, school teacher. Category I new case. Sputum positive. Weight 48kg. Lives 15 minutes from DOT center. Husband accompanies her. Family is supportive. Educated, understands the 6-month course. No smoking, no alcohol. Started treatment today.\n\nVisit 2 (Month 2): Coming regularly for DOT. Weight 49kg. No side effects reported. Sputum test done — conversion pending. Husband still accompanying. She is maintaining a medicine diary. No complaints.\n\nVisit 3 (Month 3): Sputum converted to negative. Weight 50kg. Patient says she understands she must complete the full 6 months even though she feels better. Still coming on schedule. No side effects. Husband confirms regular intake at home on non-DOT days.",
+    "output": {
+      "patient_id": "PS_28F_002",
+      "visit_number": 3,
+      "treatment_month": 3,
+      "dropout_risk_tier": "low",
+      "risk_factors": [],
+      "recommended_action": "Continue routine DOT schedule. Acknowledge patient's excellent adherence. Reinforce completion messaging at each visit.",
+      "data_completeness": "complete — all key fields recorded across visits",
+      "confidence": "high"
+    }
+  },
+  {
+    "id": "gold_003",
+    "risk_tier": "critical",
+    "num_visits": 4,
+    "language": "mixed",
+    "input": "Visit 1 (Month 1): Suresh Yadav, 42M, migrant construction worker from Bihar, currently in Pune. Retreatment case — pehle bhi treatment hua tha 3 saal pehle but left after 3 months. Category II. Sharab peeta hai daily. Staying in temporary shed at construction site. No permanent address here. Weight 48kg.\n\nVisit 2 (Month 2): Missed one week — gaya tha doosre site pe kaam ke liye. Weight 47kg — lost 1kg. Nausea and joint pain from medicine. Still drinking. Family is in Bihar, no one here to support. Asked if medicine can be reduced.\n\nVisit 3 (Month 3): Came after missing 4 days. Says bahut thak jaata hai. Side effects continuing — pet me jalan. Weight 46kg — continued weight loss is concerning. Mentioned he might go back to Bihar for a month for family event. Still drinking.\n\nVisit 4 (Month 4): Almost didn't come today. Looks thin, tired. Says ab theek lag raha hai, wants to stop. Weight 46kg. Mentioned going to Bihar next week. Drinking continues. No sputum test done since start.",
+    "output": {
+      "patient_id": "SY_42M_003",
+      "visit_number": 4,
+      "treatment_month": 4,
+      "dropout_risk_tier": "critical",
+      "risk_factors": [
+        {
+          "factor": "alcohol dependence — daily use, not reducing despite counseling",
+          "visit_first_noted": 1,
+          "clinical_basis": "alcohol use shows 2.9-3.5x higher dropout odds (Santha et al. 2002, Vijay et al. 2010) — strongest single predictor",
+          "dots_implication": "urgent de-addiction referral; alcohol directly undermines treatment adherence and hepatotoxicity risk"
+        },
+        {
+          "factor": "retreatment case with prior default at month 3",
+          "visit_first_noted": 1,
+          "clinical_basis": "retreatment cases show 2.0-3.0x higher dropout odds (Sarangi & Dutt 2014); prior default is strongest predictor of repeat default",
+          "dots_implication": "DST must be done urgently if not completed; monitor for drug resistance"
+        },
+        {
+          "factor": "migrant worker with planned extended absence",
+          "visit_first_noted": 1,
+          "clinical_basis": "migration/no fixed address shows 2.0-2.8x higher dropout odds (Vijay et al. 2010)",
+          "dots_implication": "initiate NIKSHAY transfer-out to Bihar DOT center immediately; obtain multiple contact numbers"
+        },
+        {
+          "factor": "progressive weight loss despite treatment",
+          "visit_first_noted": 2,
+          "clinical_basis": "weight loss during treatment indicates poor response or non-adherence (WHO Guidelines)",
+          "dots_implication": "investigate adherence gaps; check for unreported missed doses"
+        },
+        {
+          "factor": "symptom resolution with desire to stop treatment",
+          "visit_first_noted": 4,
+          "clinical_basis": "symptom improvement at month 2-3 shows 1.4-1.8x higher dropout odds (WHO Guidelines 4th ed.)",
+          "dots_implication": "patient has prior history of stopping at this exact stage — counseling is critical"
+        }
+      ],
+      "recommended_action": "URGENT: Escalate to STS/STLS supervisor and District TB Officer. Initiate NIKSHAY transfer to Bihar DOT center before patient travels. Arrange de-addiction referral. Do not allow treatment interruption. This patient defaulted at the same stage previously — intervention must happen today.",
+      "data_completeness": "poor — no sputum test done at any visit since treatment start; DST status unknown for retreatment case; no confirmation of doses on non-DOT days",
+      "confidence": "high"
+    }
+  },
+  {
+    "id": "gold_004",
+    "risk_tier": "moderate",
+    "num_visits": 2,
+    "language": "english",
+    "input": "Visit 1 (Month 1): Lakshmi Devi, 55F, homemaker. Category I new case. Weight 42kg. Diabetic — on metformin. Lives with son's family. DOT center is about 40 minutes by auto. Son brings her. No alcohol, no tobacco. Sputum positive.\n\nVisit 2 (Month 2): Coming regularly. Weight 42kg — no change. Mild nausea reported but manageable. Blood sugar was high last check — 220 fasting. Son says he can bring her but his work schedule may change next month. Concerned about managing both diabetes and TB medicines.",
+    "output": {
+      "patient_id": "LD_55F_004",
+      "visit_number": 2,
+      "treatment_month": 2,
+      "dropout_risk_tier": "moderate",
+      "risk_factors": [
+        {
+          "factor": "diabetes comorbidity with uncontrolled blood sugar",
+          "visit_first_noted": 1,
+          "clinical_basis": "diabetes comorbidity shows 1.3-1.8x higher dropout odds (Velayutham et al. 2014); uncontrolled sugar complicates TB treatment",
+          "dots_implication": "coordinate with diabetes care provider; monitor blood sugar at DOT visits"
+        },
+        {
+          "factor": "potential loss of transport support — son's work schedule changing",
+          "visit_first_noted": 2,
+          "clinical_basis": "distance and transport barriers show 1.5-2.0x higher dropout odds (Vijay et al. 2010)",
+          "dots_implication": "plan backup transport before son's schedule changes; explore community DOT if needed"
+        }
+      ],
+      "recommended_action": "Coordinate with diabetes care provider for integrated TB-DM management. Proactively arrange backup transport plan for next month. Consider community DOT provider if son can no longer bring her.",
+      "data_completeness": "adequate — key fields recorded; would benefit from recording HbA1c and diabetes medication details",
+      "confidence": "moderate"
+    }
+  },
+  {
+    "id": "gold_005",
+    "risk_tier": "high",
+    "num_visits": 3,
+    "language": "hindi_heavy",
+    "input": "Visit 1 (Month 1): Anil Verma, 22M, college chhod diya TB ki wajah se. Category I. Sputum positive. Weight 55kg. Akela rehta hai hostel me. Parents gaon me hain. Bidi peeta hai kabhi kabhi. Padhai ka bahut tension hai.\n\nVisit 2 (Month 2): Aaya tha dawai lene. Kehta hai dawai se bahut neend aati hai, class me dhyan nahi lag raha. Weight 54kg. Ek baar skip kiya dose kyunki hostel se nikalna pada tha. Dost nahi jaante uski bimari ke baare me — sharam aati hai.\n\nVisit 3 (Month 3): Do din late aaya. Kehta hai ab kaafi theek hai, khansi nahi hai. Poochha ki kya 4 mahine me chhod sakte hain. Weight 55kg. Bola ki exam aa rahe hain aur bahut pressure hai. Paise bhi khatam ho rahe hain.",
+    "output": {
+      "patient_id": "AV_22M_005",
+      "visit_number": 3,
+      "treatment_month": 3,
+      "dropout_risk_tier": "high",
+      "risk_factors": [
+        {
+          "factor": "symptom resolution with explicit desire to stop early",
+          "visit_first_noted": 3,
+          "clinical_basis": "patients reporting feeling well in month 2-3 show 1.4-1.8x higher dropout odds (WHO Guidelines 4th ed.)",
+          "dots_implication": "patient directly asked about early termination — must reinforce that bacteria persist despite symptom improvement"
+        },
+        {
+          "factor": "young adult with social stigma and no local family support",
+          "visit_first_noted": 1,
+          "clinical_basis": "young adults 15-30y show 1.4-1.9x higher dropout odds (Vijay et al. 2010); social isolation compounds risk",
+          "dots_implication": "connect with peer support; address stigma concerns; consider confidential DOT arrangement"
+        },
+        {
+          "factor": "financial pressure — funds running out",
+          "visit_first_noted": 3,
+          "clinical_basis": "economic barriers consistently top-3 dropout predictor in Indian cohort literature (Kumar et al. 2024, OR 1.7-2.3)",
+          "dots_implication": "enroll in Nikshay Poshan Yojana; check if college has medical support fund"
+        },
+        {
+          "factor": "medication side effects affecting daily function — excessive drowsiness",
+          "visit_first_noted": 2,
+          "clinical_basis": "side effects during intensive phase show 1.8-2.5x higher dropout odds (Vijay et al. 2010)",
+          "dots_implication": "adjust dose timing to evening; reassure side effects may reduce in continuation phase"
+        }
+      ],
+      "recommended_action": "Schedule follow-up before exam period. Adjust medication timing to reduce daytime drowsiness. Enroll in Nikshay Poshan Yojana. Provide strong anticipatory counseling about completing full 6 months — patient has explicitly asked about early stop.",
+      "data_completeness": "partial — sputum conversion status at month 2 not recorded; exact frequency of bidi smoking not quantified",
+      "confidence": "high"
+    }
+  },
+  {
+    "id": "gold_006",
+    "risk_tier": "low",
+    "num_visits": 2,
+    "language": "english",
+    "input": "Visit 1 (Month 1): Meena Kumari, 45F, ASHA worker herself from neighboring PHC. Category I new sputum positive case. Weight 56kg. No comorbidities. Non-smoker, no alcohol. Lives near DOT center, 10-minute walk. Family is aware and supportive. Understands treatment protocol thoroughly due to her own ASHA training.\n\nVisit 2 (Month 2): Completely regular. Weight 57kg. No side effects. Sputum sent for conversion test. She is counseling other TB patients in her area based on her own experience. Motivated and compliant. Asks about continuation phase schedule.",
+    "output": {
+      "patient_id": "MK_45F_006",
+      "visit_number": 2,
+      "treatment_month": 2,
+      "dropout_risk_tier": "low",
+      "risk_factors": [],
+      "recommended_action": "Continue routine DOT. Acknowledge exemplary adherence. Patient's own health worker background is a strong protective factor — she can serve as peer counselor for other patients.",
+      "data_completeness": "complete — all key fields recorded",
+      "confidence": "high"
+    }
+  },
+  {
+    "id": "gold_007",
+    "risk_tier": "high",
+    "num_visits": 3,
+    "language": "english",
+    "input": "Visit 1 (Month 1): Mohammed Iqbal, 38M, HIV positive, on ART for 2 years. Now diagnosed with pulmonary TB — Category I. Weight 50kg. Truck driver, on the road 20 days a month. Wife manages home. DOT center is convenient when he's in town but he travels extensively. CD4 count 280. Started ATT today alongside ART.\n\nVisit 2 (Month 2): Missed 5 days — was on a long haul to Chennai. Says he took the medicines with him but not sure if he took them every day. Weight 49kg. Reports stomach upset — thinks it's the combination of TB and HIV drugs. Looks tired. ART center visit overdue by 2 weeks.\n\nVisit 3 (Month 3): Back from another trip. Missed 3 more days this month. Weight 48kg — progressive loss. Says managing two sets of medicines on the road is very difficult. Wants to know if he can pause TB treatment until his work slows down. Has not visited ART center in 6 weeks.",
+    "output": {
+      "patient_id": "MI_38M_007",
+      "visit_number": 3,
+      "treatment_month": 3,
+      "dropout_risk_tier": "high",
+      "risk_factors": [
+        {
+          "factor": "HIV co-infection with lapsed ART follow-up",
+          "visit_first_noted": 1,
+          "clinical_basis": "HIV co-infection shows 1.8-2.5x higher dropout odds (Reddy Satti et al. 2016); lapsed ART coordination compounds risk",
+          "dots_implication": "urgent ART center visit needed; TB-HIV drug interactions must be monitored"
+        },
+        {
+          "factor": "occupation requiring extended travel — truck driver",
+          "visit_first_noted": 1,
+          "clinical_basis": "mobile occupation functions as equivalent to migration risk, OR 2.0-2.8 (Vijay et al. 2010)",
+          "dots_implication": "arrange DOT at highway stops or transfer-out to DOT centers along common routes"
+        },
+        {
+          "factor": "progressive weight loss over 3 visits",
+          "visit_first_noted": 2,
+          "clinical_basis": "weight loss during treatment indicates poor response or adherence gaps (WHO Guidelines)",
+          "dots_implication": "investigate actual adherence during travel; consider pill count verification"
+        },
+        {
+          "factor": "explicit request to pause treatment",
+          "visit_first_noted": 3,
+          "clinical_basis": "desire to stop/pause is a direct precursor to dropout, especially when combined with symptom or logistics burden",
+          "dots_implication": "do not agree to pause — any gap risks resistance; find a DOT solution for his travel schedule"
+        }
+      ],
+      "recommended_action": "Coordinate immediately with ART center to reschedule visit this week. Explore NIKSHAY-based DOT transfer for route-based treatment at highway health posts. Provide pre-packed daily medication packs for travel days with a diary. Do not approve treatment pause.",
+      "data_completeness": "partial — CD4 count not updated since month 1; ART regimen details not recorded; actual doses taken during travel unverified",
+      "confidence": "high"
+    }
+  },
+  {
+    "id": "gold_008",
+    "risk_tier": "moderate",
+    "num_visits": 3,
+    "language": "mixed",
+    "input": "Visit 1 (Month 1): Geeta Bai, 60F, widow. Category I. Weight 38kg — quite underweight. Lives alone in village, beti door rehti hai. DOT center is 45 minutes by shared auto. Padhi likhi nahi hai — explained treatment using pictures. No alcohol, no tobacco. Sputum positive.\n\nVisit 2 (Month 2): ASHA worker brought her today — good. Weight 39kg. Mild stomach upset. Taking medicines but confused about which one is for morning and which for evening — poochh rahi thi baar baar. Seems willing but struggles to remember.\n\nVisit 3 (Month 3): Came on her own today — ASHA worker was busy. Weight 39kg. Says dawai theek se le rahi hai but when asked about evening dose, she wasn't sure. No other complaints. Sputum conversion test done — awaiting result.",
+    "output": {
+      "patient_id": "GB_60F_008",
+      "visit_number": 3,
+      "treatment_month": 3,
+      "dropout_risk_tier": "moderate",
+      "risk_factors": [
+        {
+          "factor": "low health literacy — cannot read medication labels, repeated confusion about dosing",
+          "visit_first_noted": 1,
+          "clinical_basis": "low health literacy shows 1.3-1.6x higher dropout odds (Chauhan et al. 2024)",
+          "dots_implication": "provide pictorial medication cards; verify understanding at every visit using teach-back"
+        },
+        {
+          "factor": "social isolation — lives alone, daughter far away",
+          "visit_first_noted": 1,
+          "clinical_basis": "divorced/separated/isolated marital status shows 1.4-1.7x higher dropout odds (Zhou et al. 2020)",
+          "dots_implication": "ensure ASHA worker maintains regular visits; explore if neighbor can serve as DOT supporter"
+        }
+      ],
+      "recommended_action": "Provide color-coded pictorial medication cards. Ensure ASHA worker visits at least twice weekly to verify doses. Explore appointing a neighbor as daily DOT supporter. Verify understanding of each medication at every visit.",
+      "data_completeness": "adequate — weight tracked, sputum ordered; would benefit from recording evening dose adherence verification method",
+      "confidence": "moderate"
+    }
+  },
+  {
+    "id": "gold_009",
+    "risk_tier": "critical",
+    "num_visits": 3,
+    "language": "english",
+    "input": "Visit 1 (Month 1): Rajesh Pandey, 30M, MDR-TB confirmed after first-line treatment failure. Started on modified shorter MDR-TB regimen — expected 9-11 months. Injectables started. Daily wage painter. Lives in urban slum, shares room with 3 others. Smokes, drinks occasionally. Weight 54kg. Expressed frustration about the long treatment.\n\nVisit 2 (Month 3): Injection site pain is severe. Says the daily injections are unbearable — refuses some days. Has started skipping doses when work is available because he can't afford to miss daily wages. Weight 52kg. Roommates are complaining about his coughing. Still smoking. Says he heard from someone that TB can be cured with ayurvedic medicine in 2 months.\n\nVisit 3 (Month 5): Missed 10 days in the last month. Came only because ASHA worker found him. Weight 50kg. Says he tried ayurvedic medicine for a week but came back. Still smoking and drinking. Very frustrated — says treatment is ruining his life. Asking if he can just take oral medicines without injections.",
+    "output": {
+      "patient_id": "RP_30M_009",
+      "visit_number": 3,
+      "treatment_month": 5,
+      "dropout_risk_tier": "critical",
+      "risk_factors": [
+        {
+          "factor": "MDR-TB on extended regimen with severe injectable intolerance",
+          "visit_first_noted": 1,
+          "clinical_basis": "DR-TB requiring extended treatment (>6 months) shows 1.5-2.5x higher dropout odds (WHO Companion Handbook 2014); injectable intolerance is a documented reason for MDR-TB default",
+          "dots_implication": "evaluate eligibility for all-oral shorter regimen; injectable intolerance must be addressed medically"
+        },
+        {
+          "factor": "daily wage loss directly competing with treatment attendance",
+          "visit_first_noted": 2,
+          "clinical_basis": "daily wage labor shows 1.7-2.3x higher dropout odds (Kumar et al. 2024)",
+          "dots_implication": "Nikshay Poshan Yojana enrollment is critical; arrange DOT at early morning before work"
+        },
+        {
+          "factor": "alcohol and tobacco use continuing",
+          "visit_first_noted": 1,
+          "clinical_basis": "alcohol use shows 2.9-3.5x higher dropout odds (Santha et al. 2002); smoking shows 1.6-2.2x (Azhar 2012)",
+          "dots_implication": "de-addiction referral; alcohol interaction with MDR-TB drugs is hepatotoxic"
+        },
+        {
+          "factor": "sought alternative medicine — indicates loss of faith in treatment",
+          "visit_first_noted": 3,
+          "clinical_basis": "seeking alternative treatment is a documented precursor to default in Indian TB literature (Shringarpure et al. 2023)",
+          "dots_implication": "address misconceptions directly; explain why ayurvedic treatment cannot cure MDR-TB"
+        },
+        {
+          "factor": "10 days missed in last month — dropout already beginning",
+          "visit_first_noted": 3,
+          "clinical_basis": "treatment interruption in MDR-TB dramatically increases amplified resistance risk (WHO Guidelines)",
+          "dots_implication": "this is no longer pre-dropout — active intervention required immediately"
+        }
+      ],
+      "recommended_action": "URGENT: Escalate to District TB Officer. Evaluate switch to all-oral BPaL/BPaLM regimen to remove injection barrier. Arrange de-addiction counseling. Enroll in Nikshay Poshan Yojana. ASHA worker should visit daily. Address ayurvedic misconception. This patient is in active treatment interruption — not pre-dropout.",
+      "data_completeness": "partial — sputum culture status not mentioned; DST results for second-line drugs not recorded; liver function not monitored despite alcohol use + MDR-TB drugs",
+      "confidence": "high"
+    }
+  },
+  {
+    "id": "gold_010",
+    "risk_tier": "moderate",
+    "num_visits": 2,
+    "language": "mixed",
+    "input": "Visit 1 (Month 1): Fatima Begum, 32F, separated from husband. Talaq ho gaya 2 saal pehle. Category I. Lives with elderly mother. Works as domestic help in 3 houses. Weight 45kg. No alcohol, no tobacco. DOT center 20 min walk. Seems quiet, doesn't ask many questions. Sputum positive.\n\nVisit 2 (Month 2): Came on time. Weight 45kg. Says she hasn't told her employers about TB because she's afraid of losing her jobs. Ulti aati hai subah dawai ke baad — takes medicine before going to work. One employer noticed she looks unwell and asked questions. Fatima is anxious about being found out.",
+    "output": {
+      "patient_id": "FB_32F_010",
+      "visit_number": 2,
+      "treatment_month": 2,
+      "dropout_risk_tier": "moderate",
+      "risk_factors": [
+        {
+          "factor": "social stigma and fear of job loss — hiding diagnosis from employers",
+          "visit_first_noted": 2,
+          "clinical_basis": "stigma is a documented adherence barrier; concealment from employers creates unsustainable situation (Shringarpure et al. 2023 meta-synthesis)",
+          "dots_implication": "address stigma sensitively; explore whether disclosure is necessary; ensure she knows legal protections"
+        },
+        {
+          "factor": "separated/divorced — limited social support structure",
+          "visit_first_noted": 1,
+          "clinical_basis": "divorced/separated marital status shows 1.4-1.7x higher dropout odds (Zhou et al. 2020)",
+          "dots_implication": "map available social support; ASHA worker regular visits; connect with women's support group if available"
+        },
+        {
+          "factor": "morning nausea affecting work routine",
+          "visit_first_noted": 2,
+          "clinical_basis": "side effects during treatment show 1.8-2.5x higher dropout odds when they interfere with livelihood (Vijay et al. 2010)",
+          "dots_implication": "adjust medication timing to evening or after first meal; prescribe antiemetic if needed"
+        }
+      ],
+      "recommended_action": "Adjust medication timing to evening to reduce morning nausea before work. Discuss stigma concerns in private counseling session. Assign ASHA worker for weekly home visits. Monitor employer situation — if job loss occurs, financial support through Nikshay Poshan Yojana becomes critical.",
+      "data_completeness": "adequate — would benefit from recording employment stability status and number of missed work days",
+      "confidence": "moderate"
+    }
+  }
+]
